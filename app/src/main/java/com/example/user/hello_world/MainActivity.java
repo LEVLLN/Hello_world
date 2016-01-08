@@ -32,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
     public void OneClick(View view) {
         if (editText.getText().length() == 0 || editText.getText().toString().equals(" ")) {
             textView.setText(string.not_enought_symbol);
+
+
         } else {
             String strCats = getString(R.string.autohello);
             String t = "Тапочек";
