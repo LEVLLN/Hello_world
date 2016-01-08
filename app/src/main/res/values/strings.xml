@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Hello_world</string>
+    <string name ="lol">Кнопонька</string>
+    <string name="hintEditText">Введите значение</string>
+    <string name="text_field">Лови значение</string>
+    <string name="hello">Здравствуй</string>
+    <string name="not_enought_symbol">Вы ничего не ввели</string>
+    <string name="autohello">Здравствуйте, %1$s Вы- %2$s  или даже %3$s</string>
+</resources>
