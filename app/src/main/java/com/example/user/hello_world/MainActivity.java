@@ -41,7 +41,9 @@ public class MainActivity extends AppCompatActivity {
 
             String finad = String.format(strCats, editText.getText().toString(), t, l);
             textView.setText(finad);
-            editText.setText(null);
+            Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+            intent.putExtra("extra",editText.getText().toString());
+            startActivity(intent);
         }
 
     }
