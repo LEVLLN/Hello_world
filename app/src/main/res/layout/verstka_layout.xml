@@ -17,7 +17,7 @@
         android:background="@color/colorPrimary"
         android:padding="@dimen/padding_12"
         android:shadowRadius="123"
-        android:text="Константинопольский Константин Констанинович"
+        android:text="Пеннер Андрей Владимирович"
         android:textAlignment="center"
         android:textColor="@color/colorWhite"
         android:textSize="@dimen/text_size_header"
@@ -126,7 +126,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
                 android:editable="false"
-                android:text="100500 тг"
+                android:text="-5000 тг"
                 android:textColor="@color/colorLigtGreen"
                 android:textSize="@dimen/text_size_large"
                 android:textStyle="bold" />
@@ -172,18 +172,18 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_launcher4344"/>
+        android:src="@drawable/tumblr_static___sticker_375x360"/>
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:src="@drawable/ic_launcher4344"/>
+        android:src="@drawable/tumblr_static___sticker_375x360"/>
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_launcher4344"/>
+        android:src="@drawable/tumblr_static___sticker_375x360"/>
 
 </LinearLayout>
     <LinearLayout
@@ -198,17 +198,17 @@
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_launcher4344"/>
+            android:src="@drawable/tumblr_static___sticker_375x360"/>
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:src="@drawable/ic_launcher4344"/>
+            android:src="@drawable/tumblr_static___sticker_375x360"/>
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_launcher4344"/>
+            android:src="@drawable/tumblr_static___sticker_375x360"/>
 
     </LinearLayout>
 </LinearLayout>
