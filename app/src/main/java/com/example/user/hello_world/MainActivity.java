@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             String finad = String.format(strCats, editText.getText().toString(), t, l);
             textView.setText(finad);
             Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-            intent.putExtra("extra",editText.getText().toString());
+            intent.putExtra("extra", editText.getText().toString());
             startActivity(intent);
         }
 
@@ -62,4 +62,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void designButton(View view) {
+        Intent intent = new Intent(MainActivity.this, DesignActivity.class);
+        startActivity(intent);
+    }
 }

@@ -23,17 +23,17 @@ public class AboutActivity extends AppCompatActivity {
     MyAdapter myAdapter;
     List<Product> newProducts = new ArrayList<Product>();
     TextView textView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        myAdapter = new MyAdapter(this,list);
+        myAdapter = new MyAdapter(this, list);
         setContentView(R.layout.activity_about);
         button = (Button) findViewById(R.id.button2);
 
         fillData();
         listView = (ListView) findViewById(R.id.lvMain);
-        listView.setAdapter(new MyAdapter(this,list));
-
+        listView.setAdapter(new MyAdapter(this, list));
 
 
 //        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,names);
@@ -47,6 +47,7 @@ public class AboutActivity extends AppCompatActivity {
 //        });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); //кнопка "назад"
     }
+
     void fillData() {
         for (int i = 1; i <= 20; i++) {
             list.add(new Product("Product " + i, i * 1000));
@@ -74,11 +75,12 @@ public class AboutActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
     public void showResult(View v) {
         String result = "Вы выбрали:";
         for (Product p : myAdapter.getBox()) {
             result += "\n" + p.name;
         }
-        Toast.makeText(this,result,Toast.LENGTH_LONG).show();
+        Toast.makeText(this, result, Toast.LENGTH_LONG).show();
     }
 }

@@ -23,18 +23,18 @@ public class MyAdapter extends BaseAdapter {
     List<Product> productList = new ArrayList<>();
 
 
-    MyAdapter(Context context1,List<Product> products){
+    MyAdapter(Context context1, List<Product> products) {
         context = context1;
         productList = products;
         layoutInflater = LayoutInflater.from(context);
-     //   layoutInflater = (LayoutInflater) context.getSystemService(Context.LAUNCHER_APPS_SERVICE);
+        //   layoutInflater = (LayoutInflater) context.getSystemService(Context.LAUNCHER_APPS_SERVICE);
 
     }
 
 
     @Override
     public int getCount() {
-       return productList.size();
+        return productList.size();
     }
 
     @Override
@@ -49,25 +49,26 @@ public class MyAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View view =convertView;
-        if(view==null){
-            view = layoutInflater.inflate(R.layout.item,parent,false);
+        View view = convertView;
+        if (view == null) {
+            view = layoutInflater.inflate(R.layout.item, parent, false);
 
         }
 
         Product product = (Product) getItem(position);
 
-        ((TextView)view.findViewById(R.id.name)).setText(product.name);
-        ((TextView)view.findViewById(R.id.price)).setText(String.valueOf(product.price));
+        ((TextView) view.findViewById(R.id.name)).setText(product.name);
+        ((TextView) view.findViewById(R.id.price)).setText(String.valueOf(product.price));
 
         CheckBox checkBox;
-        checkBox = (CheckBox)view.findViewById(R.id.checkbox);
+        checkBox = (CheckBox) view.findViewById(R.id.checkbox);
         checkBox.setOnCheckedChangeListener(myCheckChangList);
         checkBox.setTag(position);
         checkBox.setChecked(product.box);
 
         return view;
     }
+
     Product getProduct(int position) {
         return ((Product) getItem(position));
     }
@@ -75,8 +76,9 @@ public class MyAdapter extends BaseAdapter {
     ArrayList<Product> getBox() {
         ArrayList<Product> box = new ArrayList<Product>();
         for (Product p : productList) {
-            if(p.box){
-                box.add(p);}
+            if (p.box) {
+                box.add(p);
+            }
         }
         return box;
     }
