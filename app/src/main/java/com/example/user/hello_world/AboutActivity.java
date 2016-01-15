@@ -50,7 +50,7 @@ public class AboutActivity extends AppCompatActivity {
 
     void fillData() {
         for (int i = 1; i <= 20; i++) {
-            list.add(new Product("Product " + i, i * 1000));
+            list.add(new Product("Product " + i, i * 1000,false));
         }
     }
 

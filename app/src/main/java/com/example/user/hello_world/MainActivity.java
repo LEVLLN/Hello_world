@@ -1,69 +1,41 @@
 package com.example.user.hello_world;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.text.Editable;
-import android.view.Menu;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.TextView;
 
-import static com.example.user.hello_world.R.*;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.View;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    private TextView textView;
-    private EditText editText;
-    private TextView textView2;
-
-    int i = 0;
+    RecyclerView mRecyclerView;
+    RecyclerView.LayoutManager mLayoutManager;
+    private List<Product> list =  new ArrayList<Product>();;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-        setContentView(layout.activity_main);
-        textView = (TextView) findViewById(id.textView);
-        editText = (EditText) findViewById(id.editText);
-        textView2 = (TextView) findViewById(id.textView2);
+        setContentView(R.layout.activity_main);
+        fillData();
+        mRecyclerView = (RecyclerView) findViewById(R.id.rv_main);
+        System.out.println(list.get(1).name);
+        mLayoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+        RecyclerAdapter mAdapter = new RecyclerAdapter(MainActivity.this, list);
+        mRecyclerView.setAdapter(mAdapter);
 
-    }
-
-    public void OneClick(View view) {
-        if (editText.getText().length() == 0 || editText.getText().toString().equals(" ")) {
-            textView.setText(string.not_enought_symbol);
-
-
-        } else {
-            String strCats = getString(R.string.autohello);
-            String t = "Тапочек";
-            String l = "Лампочка";
-
-            String finad = String.format(strCats, editText.getText().toString(), t, l);
-            textView.setText(finad);
-            Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-            intent.putExtra("extra", editText.getText().toString());
-            startActivity(intent);
         }
 
-    }
-
-    public void CircleButton(View view) {
-        i += 1;
-        textView2.setHint(String.valueOf(i));
-        Intent intent = new Intent(MainActivity.this, AboutActivity.class);
-        startActivity(intent);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
 
 
-    public void designButton(View view) {
-        Intent intent = new Intent(MainActivity.this, DesignActivity.class);
-        startActivity(intent);
+
+    void fillData() {
+        for (int i = 1; i <= 300; i++) {
+            list.add(new Product("NAME"+i,1000+i,false));
+        }
+
     }
 }
